@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>My Cart</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+  <link rel="stylesheet prefetch" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" defer></script>
+  
+
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
+  <style type="text/css">
+    
+    @font-face {
+    font-family: 'rupee';
+    src: url('rupee_foradian-1-webfont.eot');
+    src: local('Ã¢ËœÂº'), url(data:font/truetype;charset=utf-8;base64,AAEAAAANAIAAAwBQRkZUTVen5G0AAADcAAAAHEdERUYAQAAEAAAA+AAAACBPUy8yRQixzQAAARgAAABgY21hcGmyCE0AAAF4AAABamdhc3D//wADAAAC5AAAAAhnbHlmmuFTtAAAAuwAABAoaGVhZPOmAG0AABMUAAAANmhoZWELSAQOAAATTAAAACRobXR4KSwAAAAAE3AAAABMbG9jYUCgSLQAABO8AAAAKG1heHAAFQP+AAAT5AAAACBuYW1lWObwcQAAFAQAAAIDcG9zdCuGzNQAABYIAAAAuAAAAAEAAAAAxtQumQAAAADIadrpAAAAAMhp2uoAAQAAAA4AAAAYAAAAAAACAAEAAQASAAEABAAAAAIAAAADAigBkAAFAAgFmgUzAAABGwWaBTMAAAPRAGYCEgAAAgAFAAAAAAAAAIAAAKdQAABKAAAAAAAAAABITCAgAEAAICBfBZr+ZgDNBrQBoiAAARFBAAAAAAAFnAAAACAAAQAAAAMAAAADAAAAHAABAAAAAABkAAMAAQAAABwABABIAAAADgAIAAIABgAgAFIAoCAKIC8gX///AAAAIABSAKAgACAvIF/////j/7L/ZeAG3+LfswABAAAAAAAAAAAAAAAAAAAAAAEGAAABAAAAAAAAAAECAAAAAgAAAAAAAAAAAAAAAAAAAAEAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//8AAgABAAAAAAO0BZwD/QAAATMVMzUhFTMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVIxUjNSMVIzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNSE1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1ITUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNSECTBAYATwEBAQEBAQEBAQEBAQEBAQEBAQEBAQQ2AQEBAQEBAQEBAQEBAQEBAT0BAQEBAQEBAQEBAQEBAQEBAQEBAQECJwEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAgEBAQECAQECAQIBAgECAgECAwICAgMCAwMEAwQFBAcHBAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBIAcMAwEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEsCAcEBAMDAwICAgICAgECAQIBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAT9/AQEBAQEBAQEBAQEBAQEBAQEBAQECAGYBAQEBAQEBAQEBAQEBAgECAQIBAwICAwIEBAYFCjwBAQEBAQEBAQEBAQEBAQEBAQEBAQECAH0BZwEBAQIBAgIBAgECAQIBAgIBAgECAQIBAQEDAgECAQIBAgECAwICAwQEAQEBAgECAQICAQIBAgECAgECAQICAQEBAgQEBAMDAgIDAQICAQICAQEBAgEBAgEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBBAECAQEBAgEBAgEBAQECAQECAQEBAgEBAQIBAQIBAQEBAQIBAgEBAgEBAQIBAQECAQEBAgEBAQIBAQEBAQIBAQIBAQECAQEBAgEBAgEBAQEBAgEBAgEBAgEBAQEBAgEBAgEBAQECAQECAQEBAgEBAQECAQECAQECAQEBAQIBAQEBAgEBAQEBAQECAQEBAQIBAQECAQEBAgEBAQIBAQECAQECAQEBAgECAQEBAgEBAQIBAQIBAQEBAgEBAgEBAgEBAQECAQECAQEBAQIBAQECAQECAQEBAQIBAQIBAQEBAQIBAQECAQEBAgEBAgEBAQEBAQIBAQECAQEBAQIBAQECAQEBAQEBAgIeAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQECAQECAQICAgIDAwIHBQMCAQICAQIBAgECAQICAQIBAgEBAQEDAgIBAgEBAgEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAgECAQIBAgECAQIBAgECAQICAQEBAQAAAAAAQAAAAADtAWcA/0AAAEzFTM1IRUzFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFSMVIzUjFSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUhNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNSE1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUhAkwQGAE8BAQEBAQEBAQEBAQEBAQEBAQEBAQEENgEBAQEBAQEBAQEBAQEBAQE9AQEBAQEBAQEBAQEBAQEBAQEBAQEBAicBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQIBAQEBAgEBAgECAQIBAgIBAgMCAgIDAgMDBAMEBQQHBwQBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBASAHDAMBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBLAgHBAQDAwMCAgICAgIBAgECAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQE/fwEBAQEBAQEBAQEBAQEBAQEBAQEBAgBmAQEBAQEBAQEBAQEBAQIBAgECAQMCAgMCBAQGBQo8AQEBAQEBAQEBAQEBAQEBAQEBAQEBAgB9AWcBAQECAQICAQIBAgECAQICAQIBAgECAQEBAwIBAgECAQIBAgMCAgMEBAEBAQIBAgECAgECAQIBAgIBAgECAgEBAQIEBAQDAwICAwECAgECAgEBAQIBAQIBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQQBAgEBAQIBAQIBAQEBAgEBAgEBAQIBAQECAQECAQEBAQECAQIBAQIBAQECAQEBAgEBAQIBAQECAQEBAQECAQECAQEBAgEBAQIBAQIBAQEBAQIBAQIBAQIBAQEBAQIBAQIBAQEBAgEBAgEBAQIBAQEBAgEBAgEBAgEBAQECAQEBAQIBAQEBAQEBAgEBAQECAQEBAgEBAQIBAQECAQEBAgEBAgEBAQIBAgEBAQIBAQECAQECAQEBAQIBAQIBAQIBAQEBAgEBAgEBAQECAQEBAgEBAgEBAQECAQECAQEBAQECAQEBAgEBAQIBAQIBAQEBAQECAQEBAgEBAQECAQEBAgEBAQEBAQICHgEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAgEBAgECAgICAwMCBwUDAgECAgECAQIBAgECAgECAQIBAQEBAwICAQIBAQIBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQIBAgECAQIBAgECAQIBAgECAgEBAQEAAAAAAEAAAABAACTKPMBXw889QALCAAAAAAAyGna6gAAAADIadrqAAAAAAO0BZwAAAAIAAIAAAAAAAAAAQAABrT+XgDeBZwAAAAAA7QAAQAAAAAAAAAAAAAAAAAAABMD9gAAAAAAAAKqAAAB/AAAA/YAAAH8AAACzgAABZwAAALOAAAFnAAAAd4AAAFnAAAA7wAAAO8AAACzAAABHwAAAE8AAAEfAAABZwAAAAAECgQKBAoECggUCBQIFAgUCBQIFAgUCBQIFAgUCBQIFAgUCBQIFAABAAAAEwP+AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgB+AAEAAAAAABMABQAAAAMAAQQJAAAAaAAFAAMAAQQJAAEACgBtAAMAAQQJAAIADgB3AAMAAQQJAAMADgCFAAMAAQQJAAQAGgCTAAMAAQQJAAUAVgCtAAMAAQQJAAYACgEDAAMAAQQJABMACgENAAMAAQQJAMgAbgEXUnVwZWUAVAB5AHAAZQBmAGEAYwBlACAAqQAgACgAeQBvAHUAcgAgAGMAbwBtAHAAYQBuAHkAKQAuACAAMgAwADEAMAAuACAAQQBsAGwAIABSAGkAZwBoAHQAcwAgAFIAZQBzAGUAcgB2AGUAZABSAHUAcABlAGUAUgBlAGcAdQBsAGEAcgB3AGUAYgBmAG8AbgB0AFIAdQBwAGUAZQAgAFIAZQBnAHUAbABhAHIAVgBlAHIAcwBpAG8AbgAgADEALgAwADAAIABKAHUAbAB5ACAAMQA1ACwAIAAyADAAMQAwACwAIABpAG4AaQB0AGkAYQBsACAAcgBlAGwAZQBhAHMAZQBSAHUAcABlAGUAUgB1AHAAZQBlAFQAaABpAHMAIABmAG8AbgB0ACAAdwBhAHMAIABnAGUAbgBlAHIAYQB0AGUAZAAgAGIAeQAgAHQAaABlACAARgBvAG4AdAAgAFMAcQB1AGkAcgByAGUAbAAgAEcAZQBuAGUAcgBhAHQAbwByAC4AAAIAAAAAAAD/JwCWAAAAAAAAAAAAAAAAAAAAAAAAAAAAEwAAAAEAAgADADUBAgEDAQQBBQEGAQcBCAEJAQoBCwEMAQ0BDgEPB3VuaTAwQTAHdW5pMjAwMAd1bmkyMDAxB3VuaTIwMDIHdW5pMjAwMwd1bmkyMDA0B3VuaTIwMDUHdW5pMjAwNgd1bmkyMDA3B3VuaTIwMDgHdW5pMjAwOQd1bmkyMDBBB3VuaTIwMkYHdW5pMjA1Rg==)
+    format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+  </style>
+
+  <script>
+
+    window.onload = function(){
+      
+
+
+      if(localStorage.getItem("totalCost")==null)
+      	 totalCost=0;
+      else
+      	 totalCost=parseInt(localStorage.getItem("totalCost"));
+      if(localStorage.getItem("table")!=null)
+      	  document.getElementsByClassName('cart')[0].innerHTML=localStorage.getItem("table");
+
+     
+       
+       console.log(totalCost);
+
+      //if(localStorage.getItem("table")!=null)
+        // document.getElementById('table').innerHTML=localStorage.getItem("table");
+
+      document.getElementById('p1').onclick=function()
+      {
+
+         $(this).blur();
+
+         var rowExists=document.getElementById('tr1');
+
+         var table=document.getElementById('table');
+
+         //console.log("hello");
+
+         if(rowExists==null){ 
+
+            var len=$('#table tr').length;
+            //console.log(len);
+            var row=table.insertRow(len-1);
+
+            row.id='tr1';
+
+            var product=document.getElementById('name1').innerHTML;
+            var quantity=1;
+          //  console.log(quantity);
+            var rate=document.getElementById('rate1').innerHTML;
+           // console.log(rate);
+            var money=rate.substr(55);
+            totalCost+=parseInt(money);
+
+            document.getElementById('tcost').innerHTML="<span style='font-family:rupee;font-size:20px'>R</span>"+totalCost;
+
+
+
+           var cost=parseInt(money)*parseInt(quantity);
+
+            cost="<span style='font-family:rupee;font-size:20px'>R</span>"+cost;
+
+             //  Making delete button 
+            var del="&nbsp;&nbsp;<button id='del1' class='btn btn-danger'>Del</button>";
+
+
+
+
+       //     console.log(cost);
+
+            var cell1=row.insertCell(0);
+            var cell2=row.insertCell(1);
+            var cell3=row.insertCell(2);
+            var cell4=row.insertCell(3);
+
+            cell1.innerHTML=product+del;
+            console.log(cell1.innerHTML);
+            cell1.id='n1';
+
+            cell2.innerHTML=quantity;
+            cell2.id='q1';
+            cell3.innerHTML=rate;
+            cell3.id='r1';
+            cell4.innerHTML=cost;
+            cell4.id='c1';
+
+
+        }
+
+        else{
+
+           var cell=document.getElementById('q1');
+
+           //console.log(cell.innerHTML);
+           var val=cell.innerHTML;
+           val=parseInt(val);
+           //console.log(val);
+           val=val+1;
+         //  console.log(val);
+           cell.innerHTML=val;
+          // console.log(cell.innerHTML);
+           var rate=document.getElementById('rate1').innerHTML;
+           // console.log(rate);
+            var money=rate.substr(55);
+            totalCost+=parseInt(money);
+
+            document.getElementById('tcost').innerHTML="<span style='font-family:rupee;font-size:20px'>R</span>"+totalCost;
+
+  
+
+
+           var cost=parseInt(money)*parseInt(val);
+
+            cost="<span style='font-family:rupee;font-size:20px'>R</span>"+cost;
+
+            cell=document.getElementById('c1');
+
+            cell.innerHTML=cost;
+
+
+        }
+
+       var table=document.getElementsByClassName('cart')[0].innerHTML;
+      //  console.log(table);
+     //   localStorage.setItem("table",table);
+       localStorage.setItem("totalCost",totalCost);
+       localStorage.setItem("table",table);
+
+     };
+
+
+
+     document.getElementById('p2').onclick=function(){
+
+           $(this).blur();
+
+        var rowExists=document.getElementById('tr2');
+
+         var table=document.getElementById('table');
+
+
+         //console.log("hello");
+
+        if(rowExists==null){ 
+
+            var len=$('#table tr').length;
+
+            //console.log(len);    
+            var row=table.insertRow(len-1);
+
+            row.id='tr2';
+
+            var product=document.getElementById('name2').innerHTML;
+            var quantity=1;
+          //  console.log(quantity);
+            var rate=document.getElementById('rate2').innerHTML;
+           // console.log(rate);
+
+            var money=rate.substr(55);
+            totalCost+=parseInt(money);
+
+            document.getElementById('tcost').innerHTML="<span style='font-family:rupee;font-size:20px'>R</span>"+totalCost;
+
+
+
+           var cost=parseInt(money)*parseInt(quantity);
+
+            cost="<span style='font-family:rupee;font-size:20px'>R</span>"+cost;
+            //  Making delete button 
+            var del="&nbsp;&nbsp;<button id='del2' class='btn btn-danger'>Del</button>";
+
+
+            var cell1=row.insertCell(0);
+            var cell2=row.insertCell(1);
+            var cell3=row.insertCell(2);
+            var cell4=row.insertCell(3);
+
+            cell1.innerHTML=product+del;
+            console.log(cell1.innerHTML);
+            cell1.id='n2';
+
+            cell2.innerHTML=quantity;
+            cell2.id='q2';
+            cell3.innerHTML=rate;
+            cell3.id='r2';
+            cell4.innerHTML=cost;
+            cell4.id='c2';
+
+
+        }
+
+        else{
+
+           var cell=document.getElementById('q2');
+
+           //console.log(cell.innerHTML);
+           var val=cell.innerHTML;
+           val=parseInt(val);
+           //console.log(val);
+           val=val+1;
+         //  console.log(val);
+           cell.innerHTML=val;
+          // console.log(cell.innerHTML);
+            var rate=document.getElementById('rate2').innerHTML;
+           // console.log(rate);
+            var money=rate.substr(55);
+            totalCost+=parseInt(money);
+
+            document.getElementById('tcost').innerHTML="<span style='font-family:rupee;font-size:20px'>R</span>"+totalCost;
+
+
+
+           var cost=parseInt(money)*parseInt(val);
+
+            cost="<span style='font-family:rupee;font-size:20px'>R</span>"+cost;
+
+            cell=document.getElementById('c2');
+
+            cell.innerHTML=cost;
+
+
+        }
+
+        var table=document.getElementsByClassName('cart')[0].innerHTML;
+       // localStorage.setItem("table",table);
+        localStorage.setItem("totalCost",totalCost);
+        localStorage.setItem("table",table);
+       
+     };
+
+
+     document.getElementById('p3').onclick=function(){
+
+         $(this).blur();
+
+         var rowExists=document.getElementById('tr3');
+
+         var table=document.getElementById('table');
+
+         //console.log("hello");
+
+        if(rowExists==null){ 
+
+            var len=$('#table tr').length;
+
+            //console.log(len);    
+            var row=table.insertRow(len-1);
+
+            row.id='tr3';
+
+            var product=document.getElementById('name3').innerHTML;
+            var quantity=1;
+          //  console.log(quantity);
+            var rate=document.getElementById('rate3').innerHTML;
+           // console.log(rate);
+
+            var money=rate.substr(55);
+            totalCost+=parseInt(money);
+
+            document.getElementById('tcost').innerHTML="<span style='font-family:rupee;font-size:20px'>R</span>"+totalCost;
+
+
+           var cost=parseInt(money)*parseInt(quantity);
+
+            cost="<span style='font-family:rupee;font-size:20px'>R</span>"+cost;
+
+             //  Making delete button 
+            var del="&nbsp;&nbsp;<button id='del3' class='btn btn-danger'>Del</button>";
+
+
+
+            var cell1=row.insertCell(0);
+            var cell2=row.insertCell(1);
+            var cell3=row.insertCell(2);
+            var cell4=row.insertCell(3);
+
+            cell1.innerHTML=product+del;
+            console.log(cell1.innerHTML);
+            cell1.id='n3';
+
+            cell2.innerHTML=quantity;
+            cell2.id='q3';
+            cell3.innerHTML=rate;
+            cell3.id='r3';
+            cell4.innerHTML=cost;
+            cell4.id='c3';
+
+
+        }
+
+        else{
+
+           var cell=document.getElementById('q3');
+
+           //console.log(cell.innerHTML);
+           var val=cell.innerHTML;
+           val=parseInt(val);
+           //console.log(val);
+           val=val+1;
+         //  console.log(val);
+           cell.innerHTML=val;
+          // console.log(cell.innerHTML);
+            var rate=document.getElementById('rate3').innerHTML;
+           // console.log(rate);
+            var money=rate.substr(55);
+            totalCost+=parseInt(money);
+
+            document.getElementById('tcost').innerHTML="<span style='font-family:rupee;font-size:20px'>R</span>"+totalCost;
+
+
+
+           var cost=parseInt(money)*parseInt(val);
+
+            cost="<span style='font-family:rupee;font-size:20px'>R</span>"+cost;
+            cell=document.getElementById('c3');
+            cell.innerHTML=cost;
+
+
+        }
+
+        var table=document.getElementsByClassName('cart')[0].innerHTML;
+        console.log(table);
+       // localStorage.setItem("table",table);
+        localStorage.setItem("totalCost",totalCost);
+        localStorage.setItem("table",table);
+
+     };
+
+      document.getElementById('del1').onclick=function(){
+
+           var quantity=parseInt(document.getElementById('q1').innerHTML);
+           var rate=document.getElementById('r1').innerHTML;
+
+           var money=parseInt(rate.substr(55));           
+           
+           totalCost-=quantity*money;
+
+           
+
+
+
+
+      };
+
+      document.getElementById('del2').onclick=function(){
+
+            var quantity=parseInt(document.getElementById('q2').innerHTML);
+           var rate=document.getElementById('r2').innerHTML;
+
+           var money=parseInt(rate.substr(55));           
+           
+           totalCost-=quantity*money;
+
+
+      };
+
+
+      document.getElementById('del3').onclick=function(){
+
+            var quantity=parseInt(document.getElementById('q3').innerHTML);
+           var rate=document.getElementById('r3').innerHTML;
+
+           var money=parseInt(rate.substr(55));           
+           
+           totalCost-=quantity*money;
+
+      };
+
+
+   };
+
+
+
+  </script>
+
+  </head>
+
+  <body>
+
+   <div class="container-fluid products">
+
+   	<h2>Products</h2>
+   	<br>
+    
+    <div class="row" id="product1">
+     
+       <div class="col-md-4">
+       	
+       	 <img src="https://rukminim1.flixcart.com/image/312/312/mobile/b/x/a/mi-redmi-3s-prime-na-original-imaeh6bdx2uhhu82.jpeg?q=70" alt="pic of a mobile" height="300" width="150">&nbsp;&nbsp;&nbsp;
+       	 <button class="btn btn-primary" id="p1"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+
+       </div>
+
+       <div class="col-md-4">
+       	 <h3 id="name1">Redmi 3S Prime(Silver,32 GB)</h3>
+       	 <ul style="list-style-type:disc">
+           <li>3 GB RAM</li>
+           <li>5 inch HD Display</li>
+           <li>13MP Primary Camera</li>
+           <li>4100 mAh Li-ON Battery</li>
+           <li>Android MarshMallow</li>
+           <li>1 year manufacturer warranty</li>
+           <li>6 months warranty for accessories</li>
+       	 </ul>
+       </div>
+
+       <div class="col-md-4">
+       	 <h3 id="rate1"><span style="font-family:rupee;font-size:20px">R</span>8999</h3>
+       	 <h4>EMI Starting from</h4>
+       	 <h4><span style="font-family:rupee;font-size:20px">R</span>437/month</h4>
+       	 <br>
+       	 <h3>Offers</h3>
+       	 <ul style="list-style-type:disc"> 
+       	   <li>Exchange</li>
+
+       	 </ul>
+       </div>
+    
+
+    </div>
+    <br>
+
+    <div class="row" id="product2">
+      <div class="col-md-4">
+         <img src="https://rukminim1.flixcart.com/image/312/312/mobile/w/g/z/mi-redmi-3s-prime-na-original-imaeh6beckzjqeza.jpeg?q=70" alt="pic of a mobile">&nbsp;&nbsp;&nbsp;
+         <button class="btn btn-primary" id="p2"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+
+      </div>
+      <div class="col-md-4">
+        <h3 id="name2">Redmi 3S(Gold,16 GB)</h3>
+        <ul style="list-style-type:disc">
+           <li>2 GB RAM</li>
+           <li>5 inch HD Display</li>
+           <li>13MP Primary Camera</li>
+           <li>4100 mAh Li-ON Battery</li>
+           <li>Android MarshMallow</li>
+           <li>1 year manufacturer warranty</li>
+           <li>6 months warranty for accessories</li>
+       	 </ul>
+      </div>
+      <div class="col-md-4">
+      	<h3 id="rate2"><span style="font-family:rupee;font-size:20px">R</span>6999</h3>
+       	 <h4>EMI Starting from</h4>
+       	 <h4><span style="font-family:rupee;font-size:20px">R</span>437/month</h4>
+       	 <br>
+       	 <h3>Offers</h3>
+       	 <ul style="list-style-type:disc"> 
+       	   <li>Exchange</li>
+
+       	 </ul>
+      </div>
+
+
+    </div>
+    <br>
+
+    <div class="row" id="product3">
+      <div class="col-md-4">
+        <img src="https://rukminim1.flixcart.com/image/312/312/mobile/z/f/r/motorola-moto-g-turbo-edition-xt1557-original-imaefgnkpuqjzgew.jpeg?q=70" alt="pic of a mobile">&nbsp;&nbsp;&nbsp;
+        <button class="btn btn-primary" id="p3"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+
+      </div>
+      <div class="col-md-4">
+        <h3 id="name3">Moto G Turbo Edition</h3>
+        <ul style="list-style-type:disc">
+           <li>2 GB RAM</li>
+           <li>5 inch HD Display</li>
+           <li>13MP Primary Camera</li>
+           <li>2470 mAh Li-ON Battery</li>
+           <li>Android Lollipop</li>
+           <li>1 year manufacturer warranty</li>
+           <li>6 months warranty for accessories</li>
+       	 </ul>
+      </div>
+      <div class="col-md-4">
+      	<h3 id="rate3"><span style="font-family:rupee;font-size:20px">R</span>12499</h3>
+       	 <h4>EMI Starting from</h4>
+       	 <h4><span style="font-family:rupee;font-size:20px">R</span>607/month</h4>
+       	 <br>
+       	 <h3>Offers</h3>
+       	 <ul style="list-style-type:disc"> 
+       	   <li>Exchange Offer</li>
+
+       	 </ul>
+      </div>
+
+    </div>
+
+  </div>
+  <br>
+  <div class="cart">
+   
+    <table class="table table-bordered" id="table">
+       
+       <caption><h2>My Cart</h2></caption>
+
+       <thead>
+       	 <tr>
+       	 	<th>Product</th>
+       	 	<th>Quantity</th>
+       	 	<th>Rate</th>
+       	 	<th>Cost</th>
+       	</tr>
+       </thead>
+
+       <tbody>
+       	 
+       	 <tr id="total">
+     
+           <td colspan="3">Total</td>
+           <td id="tcost"><span style="font-family:rupee;font-size:20px">R</span>0</td>
+
+        </tr>
+       </tbody>
+
+    </table>
+
+  </div>
+
+  </body>
+
+
+  </html>
